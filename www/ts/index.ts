@@ -1,56 +1,43 @@
-import { createConnection, Connection } from "typeorm";
-import { Book } from "./model/Book";
-import { Author } from "./model/Author";
+import {createConnection} from "typeorm";
+import {Author} from "./entity/Author";
+import {Post} from "./entity/Post";
+import {Category} from "./entity/Category";
 
 createConnection({
-    type: "cordova-sqlite",
+    type: "cordova",
     database: "test",
     location: "default",
     entities: [
-        Book,
-        Author
+        Author,
+        Post,
+        Category
     ],
-    autoSchemaSync: true,
-    logging: true
-}).then(connection => {
-    runTest(connection);
+    logging: true,
+    autoSchemaSync: true
+}).then(async connection => {
+
+    const category1 = new Category();
+    category1.name = "TypeScript";
+
+    const category2 = new Category();
+    category2.name = "Programming";
+
+    const author = new Author();
+    author.name = "Person";
+
+    const post = new Post();
+    post.title = "Control flow based type analysis";
+    post.text = `TypeScript 2.0 implements a control flow-based type analysis for local variables and parameters.`;
+    post.categories = [category1, category2];
+    post.author = author;
+
+    const postRepository = connection.getRepository(Post);
+    await postRepository.persist(post);
+
+    console.log("Post has been saved: ", post);
+    document.writeln("Post has been saved: " + JSON.stringify(post));
+
 }).catch(error => {
-    document.writeln("error: " + JSON.stringify(error));
-    console.log(error);
+    console.log("Error: ", error);
+    document.writeln("Error: " + JSON.stringify(error));
 });
-
-
-function runTest(connection: Connection) {
-    let lookingForAlaska = new Book();
-    lookingForAlaska.isbn = "0-525-47506-0";
-    lookingForAlaska.title = "Looking for Alaska";
-    lookingForAlaska.publication_date = new Date(2005, 2, 1);
-
-    let paperTowns = new Book();
-    paperTowns.isbn = "978-0-525-47818-8";
-    paperTowns.title = "Paper Towns";
-    paperTowns.publication_date = new Date(2008, 9, 16);
-
-    let author = new Author();
-    author.firstname = "John";
-    author.lastname = "Green";
-
-    lookingForAlaska.author = author;
-    paperTowns.author = author;
-
-    let authorRepository = connection.getRepository(Author);
-    let bookRepository = connection.getRepository(Book);
-
-    authorRepository.save(author).then(() => {
-        return bookRepository.save(lookingForAlaska);
-    }).then(() => {
-        return bookRepository.save(paperTowns);
-    }).then(() => {
-        return bookRepository.createQueryBuilder("book")
-            .innerJoinAndSelect("book.author", "author").getMany();
-    }).then((resultSet) => {
-        document.writeln(JSON.stringify(resultSet));
-    }).catch((reason: any) => {
-        document.writeln("error: " + JSON.stringify(reason));
-    })
-}

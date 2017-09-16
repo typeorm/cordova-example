@@ -7,7 +7,6 @@ bin/*
 plugins/*
 platforms/*
 
-node_modules/*
-www/ts/typeorm/*
-www/js/*
-www/lib/*
+node_modules
+www/**/*.js
+www/**/*.js.map

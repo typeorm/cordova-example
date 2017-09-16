@@ -1,34 +1,34 @@
 {
-  "name": "typeorm-cordova-sqlite-test",
-  "displayName": "TypeORMTest",
-  "version": "1.0.0",
-  "description": "A simple app to test typeorm with cordova sqlite",
-  "author": "Apache Cordova Team",
-  "license": "Apache-2.0",
-  "scripts": {
-    "android": "tsc && cordova run android"
-  },
-  "dependencies": {
-    "@types/node": "^8.0.24",
-    "cordova-android": "^6.2.3",
-    "cordova-ios": "^4.4.0",
-    "cordova-plugin-whitelist": "^1.3.2",
-    "cordova-sqlite-storage": "^2.0.4",
-    "reflect-metadata": "^0.1.10",
-    "systemjs": "^0.19.41",
-    "typeorm": "0.1.0-alpha.34"
-  },
-  "cordova": {
-    "plugins": {
-      "cordova-plugin-whitelist": {},
-      "cordova-sqlite-storage": {}
+    "name": "typeorm-cordova-sqlite-test",
+    "displayName": "TypeORMTest",
+    "version": "1.0.0",
+    "description": "A simple app to test typeorm with cordova sqlite",
+    "author": "Apache Cordova Team",
+    "license": "Apache-2.0",
+    "scripts": {
+        "android": "tsc && cordova run android"
     },
-    "platforms": [
-      "android",
-      "ios"
-    ]
-  },
-  "devDependencies": {
-    "typescript": "^2.4.2"
-  }
+    "dependencies": {
+        "@types/node": "^8.0.24",
+        "cordova-android": "^6.2.3",
+        "cordova-ios": "^4.4.0",
+        "cordova-plugin-whitelist": "^1.3.2",
+        "cordova-sqlite-storage": "^2.0.4",
+        "reflect-metadata": "^0.1.10",
+        "systemjs": "0.19.47",
+        "typeorm": "0.1.0-alpha.42"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "cordova-sqlite-storage": {}
+        },
+        "platforms": [
+            "android",
+            "ios"
+        ]
+    },
+    "devDependencies": {
+        "typescript": "^2.4.2"
+    }
 }
