@@ -34,8 +34,13 @@ createConnection({
     const postRepository = connection.getRepository(Post);
     await postRepository.persist(post);
 
-    console.log("Post has been saved: ", post);
-    document.writeln("Post has been saved: " + JSON.stringify(post));
+    console.log("Post has been saved");
+    document.writeln("Post has been saved");
+    
+    const savedPost = await postRepository.findOneById(post.id);
+    
+    console.log("Post has been loaded: ", savedPost);
+    document.writeln("Post has been loaded: " + JSON.stringify(savedPost));
 
 }).catch(error => {
     console.log("Error: ", error);
