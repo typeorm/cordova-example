@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="at.daniel-lang.typeorm-cordova-test" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>TypeORMTest</name>
+<widget id="com.typeorm.cordova-example" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>TypeOrm Example</name>
     <description>
         A simple app to test typeorm with cordova sqlite
     </description>

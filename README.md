@@ -15,4 +15,4 @@ To run this example you have to
 4. copy `typeorm-browser.js` and `typeorm-browser.js.map` into `lib/typeorm`
 5. run it via `cordova run android` or `cordova run ios`
 
-This project deliberately set up to use no automation tools like gulp so you can integrate and use your own workflow.
+This project is deliberately set up to use no automation tools like gulp so you can integrate and use your own workflow.
