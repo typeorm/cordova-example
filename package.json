@@ -15,7 +15,7 @@
         "cordova-sqlite-storage": "^2.0.4",
         "reflect-metadata": "^0.1.10",
         "systemjs": "0.19.47",
-        "typeorm": "0.1.0-alpha.42"
+        "typeorm": "0.1.0-alpha.49"
     },
     "cordova": {
         "plugins": {

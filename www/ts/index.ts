@@ -13,7 +13,7 @@ createConnection({
         Category
     ],
     logging: true,
-    autoSchemaSync: true
+    synchronize: true
 }).then(async connection => {
 
     const category1 = new Category();
@@ -32,7 +32,7 @@ createConnection({
     post.author = author;
 
     const postRepository = connection.getRepository(Post);
-    await postRepository.persist(post);
+    await postRepository.save(post);
 
     console.log("Post has been saved");
     document.writeln("Post has been saved");
