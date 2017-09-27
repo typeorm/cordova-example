@@ -9,10 +9,12 @@ TypeORM comes compiled for SystemJS but can also be used with other module loade
 This example uses SystemJS.
 
 To run this example you have to
-1. run `npm install`
-2. compile via `tsc`
-3. copy `Reflect.js` and `system.src.js` from the `node_modules` folder into the `lib` folder
-4. copy `typeorm-browser.js` and `typeorm-browser.js.map` into `lib/typeorm`
-5. run it via `cordova run android` or `cordova run ios`
+1. Make sure you have `cordova` installed, check out the [cordova website](https://cordova.apache.org/#getstarted) if you haven't
+2. run `npm install`
+3. compile via `tsc`
+4. copy `Reflect.js` and `system.src.js` from the `node_modules` folder into the `lib` folder
+5. copy `typeorm-browser.js` and `typeorm-browser.js.map` into `lib/typeorm`
+6. add your desired platform by running `cordova platform add <platform>`, where platform can be android or ios
+7. run the app it via `cordova run <platform>`
 
 This project is deliberately set up to use no automation tools like gulp so you can integrate and use your own workflow.

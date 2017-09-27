@@ -1,10 +1,9 @@
 {
-    "name": "typeorm-cordova-sqlite-test",
-    "displayName": "TypeORMTest",
+    "name": "cordova-example",
     "version": "1.0.0",
     "description": "A simple app to test typeorm with cordova sqlite",
-    "author": "Apache Cordova Team",
-    "license": "Apache-2.0",
+    "author": "Daniel Lang",
+    "license": "MIT",
     "scripts": {
         "android": "tsc && cordova run android"
     },
