@@ -38,24 +38,6 @@
     <body>
        
         <script type="text/javascript" src="cordova.js"></script>
-        <script src="lib/Reflect.js"></script>
-        <script src="lib/system.src.js"></script>
-        <script>
-            System.config({
-                defaultJSExtensions: true,
-                map: {
-                    typeorm: "lib/typeorm/typeorm-browser.js"
-                },
-                packages: {
-                    typeorm: {
-                        format: "register"
-                    }
-                }
-            });
-
-            document.addEventListener("deviceready", function () {
-                System.import("js/index").catch(function(err){ console.error(err); });
-            }, false);
-        </script>
+        <script src="index.js"></script>
     </body>
 </html>

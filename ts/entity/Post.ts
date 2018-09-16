@@ -2,7 +2,7 @@ import {Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable, ManyToOne
 import {Category} from "./Category";
 import {Author} from "./Author"
 
-@Entity()
+@Entity("Post")
 export class Post {
 
     @PrimaryGeneratedColumn()
@@ -15,11 +15,13 @@ export class Post {
     text: string;
 
     @ManyToMany(type => Category, {
-        cascadeInsert: true
+        cascade: ["insert"]
     })
     @JoinTable()
     categories: Category[];
 
-    @ManyToOne(type => Author, author => author.posts)
-    author: Author;
+    @ManyToOne(type => Author, author => author.posts, {
+        cascade: ['insert']
+      })
+  author: Author;
 }
