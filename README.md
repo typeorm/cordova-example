@@ -4,10 +4,8 @@ This project demonstrates how [TypeORM](https://github.com/typeorm/typeorm) can 
 ### How to run this example
 1. Install the cordova cli: `npm install -g cordova`
 2. Install all dependencies: `npm install`
-3. Compile: `tsc`
-4. Pack js files `webpack`
-5. Add your desired platform: `cordova platform add <ios | android>`
-6. Run the app: `cordova run <ios | android>`
+3. Add your desired platform: `cordova platform add <ios | android>`
+4. Run the app: `npm run <ios | android>`
 
 This project is deliberately set up to use no automation tools like gulp so you can integrate and use your own workflow.
 

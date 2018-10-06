@@ -5,7 +5,8 @@
     "author": "Daniel Lang",
     "license": "MIT",
     "scripts": {
-        "android": "tsc &&  ./node_modules/.bin/webpack && cordova run android"
+        "android": "tsc &&  ./node_modules/.bin/webpack && cordova run android",
+        "ios": "tsc &&  ./node_modules/.bin/webpack && cordova run ios"
     },
     "dependencies": {
         "@types/node": "^10.9.4",
