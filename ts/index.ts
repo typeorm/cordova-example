@@ -1,4 +1,4 @@
-import {createConnection} from "typeorm";
+import {createConnection, Repository, getRepository} from "typeorm";
 import {Author} from "./entity/Author";
 import {Post} from "./entity/Post";
 import {Category} from "./entity/Category";
@@ -31,13 +31,14 @@ createConnection({
     post.categories = [category1, category2];
     post.author = author;
 
-    const postRepository = connection.getRepository(Post);
+    const postRepository = getRepository('Post') as Repository<Post>;
     await postRepository.save(post);
+
 
     console.log("Post has been saved");
     document.writeln("Post has been saved");
     
-    const savedPost = await postRepository.findOneById(post.id);
+    const savedPost = await postRepository.findOne(post.id);
     
     console.log("Post has been loaded: ", savedPost);
     document.writeln("Post has been loaded: " + JSON.stringify(savedPost));

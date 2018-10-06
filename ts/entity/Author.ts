@@ -1,7 +1,7 @@
 import {Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn} from "typeorm";
 import {Post} from "./Post";
 
-@Entity()
+@Entity("Author")
 export class Author {
 
     @PrimaryGeneratedColumn()

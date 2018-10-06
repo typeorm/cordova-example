@@ -5,17 +5,18 @@
     "author": "Daniel Lang",
     "license": "MIT",
     "scripts": {
-        "android": "tsc && cordova run android"
+        "android": "tsc &&  ./node_modules/.bin/webpack && cordova run android",
+        "ios": "tsc &&  ./node_modules/.bin/webpack && cordova run ios"
     },
     "dependencies": {
-        "@types/node": "^8.0.24",
-        "cordova-android": "^6.2.3",
+        "@types/node": "^10.9.4",
+        "cordova-android": "^7.1.1",
         "cordova-ios": "^4.4.0",
-        "cordova-plugin-whitelist": "^1.3.2",
-        "cordova-sqlite-storage": "^2.0.4",
+        "cordova-plugin-whitelist": "^1.3.3",
+        "cordova-sqlite-storage": "^2.4.0",
         "reflect-metadata": "^0.1.10",
-        "systemjs": "0.19.47",
-        "typeorm": "0.1.0"
+        "typeorm": "^0.2.7",
+        "webpack": "^4.19.0"
     },
     "cordova": {
         "plugins": {
@@ -28,6 +29,7 @@
         ]
     },
     "devDependencies": {
-        "typescript": "^2.4.2"
+        "typescript": "^2.4.2",
+        "webpack-cli": "^3.1.0"
     }
 }

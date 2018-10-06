@@ -8,5 +8,6 @@ plugins/*
 platforms/*
 
 node_modules
-www/js/**/*.js
-www/js/**/*.js.map
+www/index.js
+js/**/*.js
+js/**/*.js.map
